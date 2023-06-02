@@ -1,0 +1,51 @@
+{
+  "config": {
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "name": "chromium",
+        "testDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "json",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.20.1",
+    "workers": 1,
+    "webServer": null,
+    "__testGroupsCount": 0
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "=================\n no tests found.\n================="
+    }
+  ]
+}
