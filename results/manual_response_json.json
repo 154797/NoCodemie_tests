@@ -1,0 +1,86 @@
+{
+  "config": {
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/jwielinga/projects/innovation-day/codemie-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "name": "chromium",
+        "testDir": "/Users/jwielinga/projects/innovation-day/codemie-tests/tests",
+        "testIgnore": [],
+        "testMatch": ["**/?(*.)@(spec|test).*"],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [["json", null]],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "/Users/jwielinga/projects/innovation-day/codemie-tests/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.20.1",
+    "workers": 1,
+    "webServer": null,
+    "__testGroupsCount": 1
+  },
+  "suites": [
+    {
+      "title": "challenge_1.spec.ts",
+      "file": "challenge_1.spec.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "one column is dragged to page",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 546,
+                  "error": {
+                    "message": "console.lgo is not a function",
+                    "stack": "TypeError: console.lgo is not a function\n    at /Users/jwielinga/projects/innovation-day/codemie-tests/tests/challenge_1.spec.ts:8:11"
+                  },
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/jwielinga/projects/innovation-day/codemie-tests/tests/challenge_1.spec.ts",
+                    "column": 11,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "file": "challenge_1.spec.ts",
+          "line": 16,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
