@@ -15,7 +15,7 @@ test(`1.1 Create a new blank page and name it ${newPageTitle}`, async ({
   await expect(rootElement, "page is create and compiled").toBeDefined();
 });
 
-test(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
+test.only(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
   const row = await page.locator(`[data-component=Row]`).nth(0);
   await expect(row, "row should be in document").toBeVisible();
 
