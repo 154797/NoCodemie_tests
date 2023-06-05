@@ -1,0 +1,55 @@
+{
+  "config": {
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "name": "chromium",
+        "testDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "json",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.20.1",
+    "workers": 1,
+    "webServer": null,
+    "__testGroupsCount": 0
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests/challenge_1.spec.ts: Unexpected token (53:0)\n\n  51 |\n  52 | //   await expect(text, `text should be: `).toBe(textContent);\n> 53 | });\n     | ^\n  54 |",
+      "stack": "Error: /home/runner/work/NoCodemie_tests/NoCodemie_tests/tests/challenge_1.spec.ts: Unexpected token (53:0)\n\n  51 |\n  52 | //   await expect(text, `text should be: `).toBe(textContent);\n> 53 | });\n     | ^\n  54 |\n    at Module._compile (/home/runner/work/NoCodemie_tests/NoCodemie_tests/node_modules/pirates/lib/index.js:130:29)\n    at Object.newLoader (/home/runner/work/NoCodemie_tests/NoCodemie_tests/node_modules/pirates/lib/index.js:141:7)"
+    },
+    {
+      "message": "=================\n no tests found.\n================="
+    }
+  ]
+}
