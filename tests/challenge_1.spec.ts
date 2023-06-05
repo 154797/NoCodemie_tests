@@ -24,6 +24,3 @@ test(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
     "column should be in document"
   ).toBeVisible();
 });
-
-
-});
