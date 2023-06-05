@@ -1,0 +1,78 @@
+{
+  "config": {
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "name": "chromium",
+        "testDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/?(*.)@(spec|test).*"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "reporter": [
+      [
+        "json",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "rootDir": "/home/runner/work/NoCodemie_tests/NoCodemie_tests/tests",
+    "quiet": false,
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.20.1",
+    "workers": 1,
+    "webServer": null,
+    "__testGroupsCount": 1
+  },
+  "suites": [
+    {
+      "title": "challenge_1.spec.ts",
+      "file": "challenge_1.spec.ts",
+      "line": 0,
+      "column": 0,
+      "specs": [
+        {
+          "title": "1.2 Drag a ‘1 Column’ component onto your page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 0,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "file": "challenge_1.spec.ts",
+          "line": 18,
+          "column": 6
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "=====================================\n --forbid-only found a focused test.\n - challenge_1.spec.ts:18 > 1.2 Drag a ‘1 Column’ component onto your page\n====================================="
+    }
+  ]
+}
