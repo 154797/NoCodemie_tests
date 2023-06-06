@@ -26,7 +26,7 @@ jobs:
 
       - name: Setup
         run: |
-          npm i
+          npm install
           npx playwright install
       - name: Substitute JSON file
         uses: microsoft/variable-substitution@v1
