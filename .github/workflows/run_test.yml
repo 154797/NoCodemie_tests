@@ -35,6 +35,9 @@ jobs:
         env:
           url: ${{ github.event.inputs.url }}
           
+      - name: Check npm installed
+        run: npm -v in Terminal
+          
       - name: Create cache folder
         run: mkdir cache    
 
