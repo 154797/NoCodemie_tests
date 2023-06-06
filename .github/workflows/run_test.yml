@@ -43,7 +43,7 @@ jobs:
 
       - name: Run tests
         continue-on-error: true
-        run: npx playwright test ${{ github.event.inputs.test }}
+        run: npx playwright test ${{ github.event.inputs.test }} --reporter=line,allure-playwright
 
       - name: Copy contents temporary folder to results
         run: cp -R cache/* ./results
