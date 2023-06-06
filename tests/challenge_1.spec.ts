@@ -2,9 +2,6 @@ import { test, expect } from "@playwright/test";
 import { url } from "../app-settings.json";
 
 const newPageTitle = "Home";
-const rowSelector = '[data-component="Row"]';
-const columnSelector = '[data-component="Column"]';
-const textSelector = '[data-component="Text"]';
 
 test.beforeEach(async ({ page }) => {
   const newPageUrl = url + "/" + newPageTitle.toLocaleLowerCase();
@@ -19,13 +16,25 @@ test(`1.1 Create a new blank page and name it ${newPageTitle}`, async ({
 });
 
 test(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
- await expect(page.locator(columnSelector).first()).toBeVisible();
+  const row = await page.locator(`[data-component=Row]`).nth(0);
+  await expect(row, "row should be in document").toBeVisible();
+
+  await expect(
+    row.locator(`[data-component=Column]`).nth(0),
+    "column should be in document"
+  ).toBeVisible();
 });
 
 test(`1.3 Drag a ‘Text’ component into your ‘1 Column’ component`, async ({
   page,
 }) => {
-await expect(page.locator(textSelector).first()).toBeVisible();
+  const column = page.locator(`[data-component=Column]`).nth(0);
+  await expect(column, "column should be in document").toBeVisible();
+
+  await expect(
+    column.locator(`[data-component=Text]`).nth(0),
+    "text should be in document"
+  ).toBeVisible();
 });
 
 const textContent = `My first page`;
@@ -33,5 +42,12 @@ const textContent = `My first page`;
 test(`1.4 Have the ‘Text’ component display the following text: ${textContent}`, async ({
   page,
 }) => {
-  await expect(page.locator(textSelector).first()).toHaveText("My first page");
+  const column = page.locator(`[data-component=Column]`).nth(0);
+  await expect(column, "coulmn should be in document").toBeVisible();
+  const text = await column
+    .locator(`[data-component=Text]`)
+    .nth(0)
+    .textContent();
+
+  await expect(text, `text should be: `).toBe(textContent);
 });
