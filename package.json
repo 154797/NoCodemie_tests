@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "--reporter=line,alture-playwright",
   "scripts": {
     "test:hello_world": "npx playwright test hello_world --headed",
     "test:challenge_1": "npx playwright test challenge_1 --headed"
