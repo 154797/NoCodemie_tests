@@ -13,6 +13,7 @@ test(`1.1 Create a new blank page and name it ${newPageTitle}`, async ({
 }) => {
   const rootElement = page.locator("id=app");
   await expect(rootElement, "page is create and compiled").toBeDefined();
+  await page.waitForTimeout(3000);
 });
 
 test(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
@@ -23,6 +24,7 @@ test(`1.2 Drag a ‘1 Column’ component onto your page`, async ({ page }) => {
     row.locator(`[data-component="Column"]`).nth(0),
     "column should be in document"
   ).toBeVisible();
+  await page.waitForTimeout(3000);
 });
 test(`1.3 Drag a ‘Text’ component into your ‘1 Column’ component`, async ({
   page,
@@ -34,6 +36,7 @@ test(`1.3 Drag a ‘Text’ component into your ‘1 Column’ component`, async
     column.locator(`[data-component="Text"]`).nth(0),
     "text should be in document"
   ).toBeVisible();
+  await page.waitForTimeout(3000);
 });
 
 const textContent = `My first page`;
@@ -49,6 +52,6 @@ test(`1.4 Have the ‘Text’ component display the following text: ${textConten
     .textContent();
 
   await expect(text, `text should be: `).toBe(textContent);
-
+  await page.waitForTimeout(3000);
 
 });
