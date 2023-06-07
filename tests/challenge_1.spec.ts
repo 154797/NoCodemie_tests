@@ -7,7 +7,6 @@ const newPageTitle = "Home";
 test.beforeEach(async ({ page }) => {
   const newPageUrl = url + "/" + newPageTitle.toLocaleLowerCase();
   await page.goto(newPageUrl);
-  await page.waitForLoadState("networkidle");
 
 });
 

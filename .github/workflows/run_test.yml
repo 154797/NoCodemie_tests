@@ -3,13 +3,13 @@ on:
   workflow_dispatch:
     inputs:
       url:
-        description: 'URL of target page to test (example: https://roy-consultancy.betty.app/codemie-demo)'
+        description: "URL of target page to test (example: https://roy-consultancy.betty.app/codemie-demo)"
         required: true
       test:
-        description: 'Specify the testfile you would like to run (example: hello_world)'
+        description: "Specify the testfile you would like to run (example: hello_world)"
         required: true
       filename:
-        description: 'Filename of result saved in repo'
+        description: "Filename of result saved in repo"
         required: true
 env:
   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1 # Skip downloading during yarn install
@@ -19,7 +19,7 @@ env:
 jobs:
   test-exam:
     runs-on: ubuntu-latest
-    continue-on-error: true
+    continue-on-error: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,12 +31,12 @@ jobs:
       - name: Substitute JSON file
         uses: microsoft/variable-substitution@v1
         with:
-          files: 'app-settings.json'
+          files: "app-settings.json"
         env:
           url: ${{ github.event.inputs.url }}
-          
+
       - name: Create cache folder
-        run: mkdir cache    
+        run: mkdir cache
 
       - name: Run tests
         continue-on-error: true
@@ -44,12 +44,12 @@ jobs:
 
       - name: Copy contents temporary folder to results
         run: cp -R cache/* ./results
-        
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
         with:
           author_name: Betty Blocks
           author_email: noreply@bettyblocks.com
-          message: 'result-${{ github.run_number }}.json'
-          add: 'result-${{ github.run_number }}.json'
-          cwd: './results'
+          message: "result-${{ github.run_number }}.json"
+          add: "result-${{ github.run_number }}.json"
+          cwd: "./results"
